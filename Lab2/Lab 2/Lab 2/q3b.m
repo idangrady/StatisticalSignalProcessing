@@ -1,4 +1,4 @@
-close all; clear all; clc
+close all; clear all; clc;
 %fs = 44000; %44 KHz
 
 [y2,fs] = audioread("vowel1.wav");
