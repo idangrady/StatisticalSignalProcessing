@@ -116,33 +116,15 @@ close all; clear all; clc
  [output2,var_curr_length2] = lpc(y2,145);
 
  figure(1);
- subplot(2,2,1)
+[h1, fs1] = freqz(1,output1,1000,fs);
+plot(fs1, h1)
+
+figure(2);
 [h1, fs1] = freqz(1,output1,10,fs);
-plot(fs1, mag2db(abs(h1)))
-title("Y1 With b = 10")
-xlabel('Frequency')
-ylabel('Magnitude db')
+plot(fs1, h1)
 
-subplot(2,2,2)
-[h1, fs1] = freqz(1,output1,22000,fs);
-plot(fs1, mag2db(abs(h1)))
-title("Y1 With b = 22,000")
-xlabel('Frequency')
-ylabel('Magnitude db')
-
-subplot(2,2,3)
-[h2, fs2] = freqz(1,output2,10,fs);
-plot(fs2, mag2db(abs(h2)))
-title("Y2 With b = 10")
-xlabel('Frequency')
-ylabel('Magnitude db')
-
-subplot(2,2,4)
-[h2, fs2] = freqz(1,output2,22000,fs);
-plot(fs2, mag2db(abs(h2)))
-title("Y2 With b = 22,000")
-xlabel('Frequency')
-ylabel('Magnitude db')
+figure(3);
+freqz(1,output1,10,fs);
 
 %%
  subplot(2,2,2)
